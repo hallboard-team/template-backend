@@ -12,7 +12,7 @@ services:
     # Image naming convention (team registry + SDK version)
     image: ghcr.io/hallboard-team/dotnet${DOTNET_VERSION}:latest
 
-    container_name: ${CONTAINER_NAME:-backend_dotnet-{DOTNET_VERSION}_p{PORT}_dev}
+    container_name: ${CONTAINER_NAME:-backend_dotnet-${DOTNET_VERSION}_p${PORT}_dev}
 
     # Run as the local host user to prevent permission issues
     user: "1000:1000"
