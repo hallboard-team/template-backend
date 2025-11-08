@@ -4,7 +4,7 @@
 # Usage:
 #   ./start-dev.sh <container-name> <port> <dotnet version>
 # Example:
-#   ./start-dev.sh school-api 5000 9.0
+#   ./start-dev.sh school 5000 9.0
 # -----------------------------
 
 set -euo pipefail
