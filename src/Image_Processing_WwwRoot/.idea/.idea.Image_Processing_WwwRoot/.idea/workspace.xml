@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="54fd2bfa-927c-4fc4-bee6-1968eb2d4c27" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.devcontainer/devcontainer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.devcontainer/devcontainer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Dockerfile.dev" beforeDir="false" afterPath="$PROJECT_DIR$/../../Dockerfile.dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../podman-compose.backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../podman-compose.backend.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../podman-compose.frontend.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../start-dev.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../start-dev.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mrtabaa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hallboard-team/template-dotnet9-back.git&quot;,
+    &quot;accountId&quot;: &quot;e61f570f-c442-4b89-a099-491b7c1d74a4&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/reza/Documents/GitHub/Templates/back/backend/src/Image_Processing_WwwRoot/obj/Debug/net9.0/Image_Processing_WwwRoot.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/reza/Documents/GitHub/Templates/back/backend/src/Image_Processing_WwwRoot/obj/Debug/net9.0/Image_Processing_WwwRoot.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="356UqY0uAH7bZYfTI2rX9fFtj8B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "/home/reza/.local/share/JetBrains/Rider2025.2/Shell Script/shellcheck",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/reza/Documents/GitHub/Templates/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Docker"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="54fd2bfa-927c-4fc4-bee6-1968eb2d4c27" name="Changes" comment="" />
+      <created>1762430207681</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762430207681</updated>
+      <workItem from="1762430210754" duration="9249000" />
+      <workItem from="1762477040435" duration="1046000" />
+      <workItem from="1762543283382" duration="2366000" />
+      <workItem from="1762596654501" duration="683000" />
+      <workItem from="1762597360898" duration="1508000" />
+      <workItem from="1762598889554" duration="69000" />
+      <workItem from="1762599056253" duration="725000" />
+      <workItem from="1762600871297" duration="1162000" />
+      <workItem from="1762604076632" duration="185000" />
+      <workItem from="1762605291066" duration="3048000" />
+      <workItem from="1762613858828" duration="3850000" />
+    </task>
+    <task id="LOCAL-00001" summary="Remove -dev since it's tagged with :latest">
+      <option name="closed" value="true" />
+      <created>1762599519343</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762599519343</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed paths">
+      <option name="closed" value="true" />
+      <created>1762599780620</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762599780620</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Restructured the folders">
+      <option name="closed" value="true" />
+      <created>1762601592881</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762601592881</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added command format guide.">
+      <option name="closed" value="true" />
+      <created>1762601730083</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762601730083</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Cleanup">
+      <option name="closed" value="true" />
+      <created>1762601770587</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762601770587</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Improved comments">
+      <option name="closed" value="true" />
+      <created>1762604253797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762604253797</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Imporved file naming">
+      <option name="closed" value="true" />
+      <created>1762605393667</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762605393667</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed compose file name">
+      <option name="closed" value="true" />
+      <created>1762605486546</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762605486546</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Improved rootless permission">
+      <option name="closed" value="true" />
+      <created>1762615856008</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762615856008</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Improved image name">
+      <option name="closed" value="true" />
+      <created>1762615871214</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762615871214</updated>
+    </task>
+    <task id="LOCAL-00011">
+      <option name="closed" value="true" />
+      <created>1762617577688</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762617577688</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Remove -dev since it's tagged with :latest" />
+    <MESSAGE value="Fixed paths" />
+    <MESSAGE value="Restructured the folders" />
+    <MESSAGE value="Added command format guide." />
+    <MESSAGE value="Cleanup" />
+    <MESSAGE value="Improved comments" />
+    <MESSAGE value="Imporved file naming" />
+    <MESSAGE value="Fixed compose file name" />
+    <MESSAGE value="Improved rootless permission" />
+    <MESSAGE value="Improved image name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved image name" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

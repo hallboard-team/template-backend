@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.csdevkit",
+    "adrianwilczynski.user-secrets",
+    "maptz.regionfolder",
+    "nurlybekovnt.csharpextensions",
+    "adrianwilczynski.user-secrets",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "GitHub.vscode-github-actions",
+    "eamodio.gitlens",
+    "PKief.material-icon-theme",
+    "patcx.vscode-nuget-gallery",
+    "johnpapa.vscode-peacock",
+    "Gruntfuggly.todo-tree"
+  ]
+}

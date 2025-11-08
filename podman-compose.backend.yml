@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  api:
+    # Build configuration (Dockerfile and .NET SDK version)
+    build:
+      context: .                           # Root of the repo (where backend/, frontend/ live)
+      dockerfile: Dockerfile.dev           # Dev image definition
+      args:
+        DOTNET_VERSION: ${DOTNET_VERSION:-9.0}  # Default to .NET 9.0 if not provided
+
+    # Image naming convention (team registry + SDK version)
+    image: ghcr.io/hallboard-team/api-dotnet${DOTNET_VERSION}:latest
+
+    container_name: ${CONTAINER_NAME:-api_dev}
+
+    # Run as the local host user to prevent permission issues
+    user: "1000:1000"
+
+    # Mount host project into container workspace for live code editing
+    volumes:
+      - ./:/workspaces/app:Z
+      - ~/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
+
+    # Environment setup for VS Code Remote Containers
+    environment:
+      - VSCODE_SERVER_DIR=/home/vscode/.vscode-server-shared
+
+    # Expose API port (default 5000)
+    ports:
+      - "${PORT:-5000}:5000"
+
