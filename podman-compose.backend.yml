@@ -10,7 +10,7 @@ services:
         DOTNET_VERSION: ${DOTNET_VERSION:-9.0}  # Default to .NET 9.0 if not provided
 
     # Image naming convention (team registry + SDK version)
-    image: ghcr.io/hallboard-team/api-dotnet${DOTNET_VERSION}:latest
+    image: ghcr.io/hallboard-team/dotnet${DOTNET_VERSION}:latest
 
     container_name: ${CONTAINER_NAME:-api_dev}
 
