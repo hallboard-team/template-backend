@@ -1,32 +1,31 @@
 #!/bin/bash
 # -----------------------------
-# Start Podman Compose for .NET dev environment
+# Start Podman Compose for .NET dev environment (shared stack)
 # Usage:
-#   ./pull-start-dev.sh <container-name> <port> <dotnet version>
+#   ./pull-start-dev.sh <port> [dotnet_version]
 # Example:
-#   ./pull-start-dev.sh school 5000 9.0
+#   ./pull-start-dev.sh 5000 9.0
 # -----------------------------
 
 set -euo pipefail
 cd "$(dirname "$0")"
 
-CUSTOM_NAME="${1:-}"
-PORT="${2:-5000}"
-DOTNET_VERSION="${3:-9.0}"
-
-# Build container name dynamically
-if [ -z "$CUSTOM_NAME" ]; then
-  CONTAINER_NAME="backend_dotnet-v${DOTNET_VERSION}_p${PORT}_dev"
-else
-  CONTAINER_NAME="${CUSTOM_NAME}_dotnet-v${DOTNET_VERSION}_p${PORT}_dev"
-fi
+PORT="${1:-5000}"
+DOTNET_VERSION="${2:-9.0}"
+IMAGE="ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION}:latest"
+CONTAINER_NAME="backend_dotnet-v${DOTNET_VERSION}_p${PORT}_dev"
 
 # Fix VS Code shared cache permissions
 sudo rm -rf ~/.cache/vscode-server-shared
 mkdir -p ~/.cache/vscode-server-shared/bin
 sudo chown -R 1000:1000 ~/.cache/vscode-server-shared
 
-IMAGE="ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION}:latest"
+# Check if the port is already in use
+if ss -tuln | grep -q ":${PORT} "; then
+  echo "⚠️  Port ${PORT} is already in use. Please choose another port."
+  exit 1
+fi
+
 echo "🔍 Checking for image: $IMAGE"
 
 # Pull image manually and verify success
@@ -37,11 +36,11 @@ fi
 
 echo "🚀 Starting .NET container '$CONTAINER_NAME' (.NET $DOTNET_VERSION, port $PORT)..."
 
-# Start container
+# Start container without building
 if CONTAINER_NAME="$CONTAINER_NAME" PORT="$PORT" DOTNET_VERSION="$DOTNET_VERSION" \
    podman-compose -f podman-compose.backend.yml up -d; then
 
-  # Check if container is actually running
+  # Verify the container is running
   if podman ps --filter "name=$CONTAINER_NAME" --format '{{.Names}}' | grep -q "$CONTAINER_NAME"; then
     echo "✅ Container '$CONTAINER_NAME' started successfully (.NET $DOTNET_VERSION) on port $PORT"
   else
