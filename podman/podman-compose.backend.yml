@@ -1,3 +1,7 @@
+# Try Pulling the image from 'ghcr.io/hallboard-team/'
+#   Builds the image if NOT exists.
+# Create a container off the image and run it. 
+
 version: "3.9"
 
 services:
@@ -8,7 +12,7 @@ services:
       args:
         DOTNET_VERSION: ${DOTNET_VERSION:-9.0}
 
-    image: ghcr.io/hallboard-team/dotnet${DOTNET_VERSION}:latest
+    image: ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION}:latest
     container_name: ${CONTAINER_NAME}
 
     user: "1000:1000"
