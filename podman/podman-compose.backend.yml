@@ -22,6 +22,7 @@ services:
       - ~/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
 
     environment:
+      - REMOTE_USER=vscode
       - VSCODE_SERVER_DIR=/home/vscode/.vscode-server-shared
 
     ports:
