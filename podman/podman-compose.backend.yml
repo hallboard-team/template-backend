@@ -7,8 +7,8 @@ version: "3.9"
 services:
   api:
     build:
-      context: .
-      dockerfile: Dockerfile.dev
+      context: ..
+      dockerfile: podman/build/Dockerfile.dev
       args:
         DOTNET_VERSION: ${DOTNET_VERSION:-9.0}
 
@@ -22,7 +22,6 @@ services:
       - ~/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
 
     environment:
-      - REMOTE_USER=vscode
       - VSCODE_SERVER_DIR=/home/vscode/.vscode-server-shared
 
     ports:

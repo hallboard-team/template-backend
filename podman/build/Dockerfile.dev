@@ -1,0 +1,16 @@
+ARG DOTNET_VERSION=9.0
+FROM mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
+
+# Create vscode user
+RUN id -u vscode &>/dev/null || useradd -u 1000 -m vscode
+
+# Create workspace directory as root FIRST
+RUN mkdir -p /workspaces/app \
+    && chown -R 1000:1000 /workspaces
+
+# Switch user AFTER directory is owned
+USER 1000:1000
+
+WORKDIR /workspaces/app
+
+CMD ["sleep", "infinity"]
