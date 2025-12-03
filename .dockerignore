@@ -1,37 +1,49 @@
-# Ignore git data
+########################################
+# Git
+########################################
 .git
 .gitignore
 
-# IDE / editor
-.vscode
-.idea
+########################################
+# IDE / Editor
+########################################
+.vscode/
+.idea/
 *.swp
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
 
-# Build output
+########################################
+# Build outputs (never copy these into image)
+########################################
 bin/
 obj/
 out/
 artifacts/
 
-# Docker files themselves
-Dockerfile*
-docker-compose*
-podman-compose*
-
-# Dev container config
-.devcontainer/
-.vscode-server/
-
-# Logs and temporary files
+########################################
+# User junk / logs
+########################################
 *.log
 logs/
 tmp/
 temp/
 
-# OS files
+########################################
+# OS Files
+########################################
 .DS_Store
 Thumbs.db
+
+########################################
+# Dev-only infra that should NOT be copied
+########################################
+
+# DevContainer configs never needed in build context
+.devcontainer/
+
+# Podman scripts/configs (only host-side)
+podman/
+
+# Docker build files inside template
+Dockerfile*
+docker-compose*
+podman-compose*

@@ -1,6 +1,51 @@
-# .NET build and dependency artifacts
+########################################
+# Editor / IDE (user-specific)
+########################################
+
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.swp
+
+# Rider files (project-specific configs are allowed)
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/httpRequests
+.idea/**/dataSources
+.idea/**/dataSources.local.xml
+
+# Optional: uncomment if you DO NOT want to share launch/settings/tasks
+# .vscode/
+
+########################################
+# .NET Build Outputs
+########################################
+
 bin/
 obj/
+out/
+artifacts/
+
+# NuGet
 project.assets.json
 project.nuget.cache
-/.idea/
+
+########################################
+# Logs & Temp
+########################################
+
+*.log
+logs/
+tmp/
+temp/
+*.pid
+
+########################################
+# OS junk
+########################################
+
+.DS_Store
+Thumbs.db
