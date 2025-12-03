@@ -1,10 +1,10 @@
 {
-  "name": "Hallboard Back-End Template",
+  "name": "dev-${localWorkspaceFolderBasename}",
   "dockerComposeFile": "docker-compose.devcontainer.yml",
   "service": "api",
   "workspaceFolder": "/workspaces/app",
   "updateRemoteUserUID": false,
   "remoteEnv": {
-    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared"
+    "VSCODE_SERVER_DIR": "/vscode/vscode-server"
   }
 }

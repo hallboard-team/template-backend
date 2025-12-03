@@ -3,7 +3,6 @@ version: "3.9"
 services:
   api:
     image: ghcr.io/hallboard-team/dotnet-v9.0:latest
-    container_name: templatebackend_devcontainer
 
     # IMPORTANT: run as root inside container (maps to your host user in rootless Podman)
     user: "0:0"
