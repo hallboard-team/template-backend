@@ -4,7 +4,7 @@ version: "3.9"
 
 services:
   api:
-    image: ghcr.io/hallboard-team/dotnet-v9.0:latest
+    image: ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION:-9.0}:latest
 
     user: "0:0"
     working_dir: /workspaces/app
@@ -16,7 +16,6 @@ services:
     environment:
       VSCODE_SERVER_DIR: /vscode/vscode-server
 
-    # Each project can override DEV_PORT via .env
     ports:
       - "${DEV_PORT:-5000}:5000"
 
