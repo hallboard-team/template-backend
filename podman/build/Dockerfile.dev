@@ -1,16 +1,28 @@
+# -------------------------------
+# Base .NET SDK image (dynamic version)
+# -------------------------------
 ARG DOTNET_VERSION=9.0
 FROM mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
 
-# Create vscode user
+# Create vscode user ONLY if not exists (rootless-safe)
 RUN id -u vscode &>/dev/null || useradd -u 1000 -m vscode
 
-# Create workspace directory as root FIRST
-RUN mkdir -p /workspaces/app \
-    && chown -R 1000:1000 /workspaces
+# Prepare workspace directory BEFORE switching users
+RUN mkdir -p /workspaces/app && \
+    chown -R 1000:1000 /workspaces
 
-# Switch user AFTER directory is owned
+# Prepare VS Code shared server directory (host-mounted)
+RUN mkdir -p /home/vscode/.vscode-server-shared && \
+    chown -R 1000:1000 /home/vscode/.vscode-server-shared
+
+# Environment variable instructs VS Code NOT to write to /workspaces
+ENV VSCODE_SERVER_DIR=/home/vscode/.vscode-server-shared
+
+# Switch to non-root user
 USER 1000:1000
 
+# Set working directory for dev tools
 WORKDIR /workspaces/app
 
+# Keep container running
 CMD ["sleep", "infinity"]

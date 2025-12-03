@@ -10,6 +10,17 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+# Ensure the repo is owned by the current user (avoid permission hell in the container)
+if [ "$(stat -c %u .)" != "$(id -u)" ]; then
+  echo "⚠ Repo at '$(pwd)' is not owned by user $(id -un) (uid $(id -u))."
+  echo "   This will break devcontainers because the container runs as uid $(id -u)."
+  echo
+  echo "   Fix it once on the host with:"
+  echo "     sudo chown -R $(id -u):$(id -g) '$(pwd)'"
+  echo
+  exit 1
+fi
+
 PORT="${1:-5000}"
 DOTNET_VERSION="${2:-9.0}"
 IMAGE="ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION}:latest"
@@ -18,7 +29,7 @@ CONTAINER_NAME="backend_dotnet-v${DOTNET_VERSION}_p${PORT}_dev"
 # Fix VS Code shared cache permissions
 sudo rm -rf ~/.cache/vscode-server-shared
 mkdir -p ~/.cache/vscode-server-shared/bin
-sudo chown -R 1000:1000 ~/.cache/vscode-server-shared
+chown -R 1000:1000 ~/.cache/vscode-server-shared
 
 # Check if the port is already in use
 if ss -tuln | grep -q ":${PORT} "; then
