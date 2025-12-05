@@ -2,9 +2,9 @@
 # -----------------------------
 # Pull & Start Podman Compose for .NET dev environment (shared stack)
 # Usage:
-#   ./pull-start-dev.sh <port> [dotnet_version]
+#   ./pull-start-backend-dev.sh <port> [dotnet_version]
 # Example:
-#   ./pull-start-dev.sh 5000 9.0
+#   ./pull-start-backend-dev.sh 5000 9.0
 # -----------------------------
 
 set -euo pipefail
