@@ -1,4 +1,3 @@
-# Used for non_VS-Code environemtns. 
 # Creates a container off the shared dev image and runs it.
 
 version: "3.9"
