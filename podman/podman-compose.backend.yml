@@ -1,11 +1,9 @@
-# Creates a container off the shared dev image and runs it.
-
 version: "3.9"
 
 services:
   api:
     image: ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION:-9.0}:latest
-    container_name: ${CONTAINER_NAME}
+    container_name: ${CONTAINER_NAME:-template}_api-dev
 
     user: "0:0"
     working_dir: /workspaces/app
