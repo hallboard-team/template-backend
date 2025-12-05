@@ -8,6 +8,7 @@ services:
     image: ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION:-9.0}:latest
     container_name: ${CONTAINER_NAME}
 
+    user: "0:0"
     working_dir: /workspaces/app
 
     volumes:
