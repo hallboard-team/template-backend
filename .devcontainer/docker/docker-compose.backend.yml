@@ -5,19 +5,24 @@ services:
     image: ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION:-9.0}:latest
     container_name: ${CONTAINER_NAME:-template}_api-dev
 
-    user: "0:0"
     working_dir: /workspaces/app
 
     volumes:
+      # Mount the whole repo into the container
       - ../../:/workspaces/app:Z
+
+      # Shared VS Code server cache, same pattern as frontend
       - ~/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
 
     environment:
+      # Matches ENV in the Dockerfile (backend image)
       - VSCODE_SERVER_DIR=/home/vscode/.vscode-server-shared
 
+    # Expose API port: host:container
     ports:
       - "${PORT:-5000}:5000"
 
+    # Keep container alive; devcontainer will run dotnet from terminal / tasks
     command: >
       bash -c "
         dotnet --info &&
