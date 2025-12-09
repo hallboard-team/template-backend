@@ -40,10 +40,10 @@ Thumbs.db
 # DevContainer configs never needed in build context
 .devcontainer/
 
-# Podman scripts/configs (only host-side)
-podman/
+# Docker scripts/configs (only host-side)
+docker/
 
 # Docker build files inside template
 Dockerfile*
 docker-compose*
-podman-compose*
+docker-compose*

@@ -1,6 +1,6 @@
 {
   "name": "dev-${localWorkspaceFolderBasename}",
-  "dockerComposeFile": "../podman/podman-compose.backend.yml",
+  "dockerComposeFile": "./docker/docker-compose.backend.yml",
   "service": "api",
   "workspaceFolder": "/workspaces/app",
   "shutdownAction": "stopCompose",

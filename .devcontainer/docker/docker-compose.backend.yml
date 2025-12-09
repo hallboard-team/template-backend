@@ -9,7 +9,7 @@ services:
     working_dir: /workspaces/app
 
     volumes:
-      - ../:/workspaces/app:Z
+      - ../../:/workspaces/app:Z
       - ~/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
 
     environment:

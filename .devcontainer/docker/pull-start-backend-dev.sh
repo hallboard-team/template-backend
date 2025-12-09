@@ -1,6 +1,6 @@
 #!/bin/bash
 # -----------------------------
-# Pull & Start Podman Compose for .NET dev environment (shared stack)
+# Pull & Start Docker Compose for .NET dev environment (shared stack)
 # Usage:
 #   ./pull-start-backend-dev.sh <port> [dotnet_version]
 # Example:
@@ -25,7 +25,7 @@ PORT="${1:-5000}"
 DOTNET_VERSION="${2:-9.0}"
 IMAGE="ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION}:latest"
 CONTAINER_NAME="backend_dotnet-v${DOTNET_VERSION}_p${PORT}_dev"
-COMPOSE_FILE="podman-compose.backend.yml"
+COMPOSE_FILE="docker-compose.backend.yml"
 
 # Fix VS Code shared cache permissions
 sudo rm -rf ~/.cache/vscode-server-shared
@@ -33,11 +33,11 @@ mkdir -p ~/.cache/vscode-server-shared/bin
 chown -R 1000:1000 ~/.cache/vscode-server-shared
 
 # Ensure the image exists locally (PULL, don't build)
-if podman image exists "$IMAGE"; then
+if docker image exists "$IMAGE"; then
   echo "🧱 Image '$IMAGE' already exists locally — skipping pull."
 else
   echo "📥 Pulling dev image '$IMAGE' from GHCR..."
-  if ! podman pull "$IMAGE"; then
+  if ! docker pull "$IMAGE"; then
     echo "❌ Failed to pull image '$IMAGE'. Make sure it exists and you are logged in to GHCR."
     exit 1
   fi
@@ -53,15 +53,15 @@ echo "🚀 Starting .NET container '$CONTAINER_NAME' (.NET $DOTNET_VERSION, port
 
 # Start container WITHOUT building
 if CONTAINER_NAME="$CONTAINER_NAME" PORT="$PORT" DOTNET_VERSION="$DOTNET_VERSION" \
-   podman-compose -f "$COMPOSE_FILE" up -d; then
+   docker-compose -f "$COMPOSE_FILE" up -d; then
 
-  if podman ps --filter "name=$CONTAINER_NAME" --format '{{.Names}}' | grep -q "$CONTAINER_NAME"; then
+  if docker ps --filter "name=$CONTAINER_NAME" --format '{{.Names}}' | grep -q "$CONTAINER_NAME"; then
     echo "✅ Container '$CONTAINER_NAME' started successfully (.NET $DOTNET_VERSION) on port $PORT"
   else
     echo "❌ Container '$CONTAINER_NAME' did not start properly even though compose succeeded."
     exit 1
   fi
 else
-  echo "❌ podman-compose failed to start container '$CONTAINER_NAME'."
+  echo "❌ docker-compose failed to start container '$CONTAINER_NAME'."
   exit 1
 fi
