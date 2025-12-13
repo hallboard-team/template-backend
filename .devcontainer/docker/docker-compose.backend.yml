@@ -12,7 +12,7 @@ services:
       - ../../:/workspaces/app:Z
 
       # Shared VS Code server cache, same pattern as frontend
-      - ~/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
+      - ${HOME}/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
 
     environment:
       # Matches ENV in the Dockerfile (backend image)
