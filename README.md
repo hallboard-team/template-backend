@@ -28,7 +28,7 @@ You can tweak a few settings through environment variables consumed by the compo
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `DOTNET_VERSION` | `10.0` | Chooses the SDK tag in `ghcr.io/hallboard-team/dotnet:<version>-sdk`. |
-| `CONTAINER_NAME` | `template` | Prefix for the dev container (`${CONTAINER_NAME}_api-dev`). |
+| `COMPOSE_PROJECT_NAME` | `template` | Prefix for the dev container (`${COMPOSE_PROJECT_NAME}_api-dev`). |
 | `PORT` | `5000` | Host port forwarded to the container's port 5000. |
 
 Set them in a `.env` file next to the compose file or in your VS Code workspace settings if you want different defaults.

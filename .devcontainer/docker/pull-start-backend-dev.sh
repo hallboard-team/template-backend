@@ -2,9 +2,9 @@
 # -----------------------------
 # Pull & Start Docker Compose for .NET dev environment (shared stack)
 # Usage:
-#   ./pull-start-backend-dev.sh <port> [dotnet_version]
+#   ./pull-start-backend-dev.sh <port> [dotnet_version] [project_name]
 # Example:
-#   ./pull-start-backend-dev.sh 5000 9.0
+#   ./pull-start-backend-dev.sh 5000 9.0 myproject
 # -----------------------------
 
 set -euo pipefail
@@ -23,8 +23,9 @@ fi
 
 PORT="${1:-5000}"
 DOTNET_VERSION="${2:-9.0}"
+COMPOSE_PROJECT_NAME="${3:-${COMPOSE_PROJECT_NAME:-template}}"
 IMAGE="ghcr.io/hallboard-team/dotnet-v${DOTNET_VERSION}:latest"
-CONTAINER_NAME="backend_dotnet-v${DOTNET_VERSION}_p${PORT}_dev"
+CONTAINER_NAME="${COMPOSE_PROJECT_NAME}_api-dev"
 COMPOSE_FILE="docker-compose.backend.yml"
 
 # Fix VS Code shared cache permissions
@@ -50,9 +51,10 @@ if ss -tuln | grep -q ":${PORT} "; then
 fi
 
 echo "🚀 Starting .NET container '$CONTAINER_NAME' (.NET $DOTNET_VERSION, port $PORT)..."
+echo "   Project name: $COMPOSE_PROJECT_NAME"
 
 # Start container WITHOUT building
-if CONTAINER_NAME="$CONTAINER_NAME" PORT="$PORT" DOTNET_VERSION="$DOTNET_VERSION" \
+if COMPOSE_PROJECT_NAME="$COMPOSE_PROJECT_NAME" PORT="$PORT" DOTNET_VERSION="$DOTNET_VERSION" \
    docker-compose -f "$COMPOSE_FILE" up -d; then
 
   if docker ps --filter "name=$CONTAINER_NAME" --format '{{.Names}}' | grep -q "$CONTAINER_NAME"; then
