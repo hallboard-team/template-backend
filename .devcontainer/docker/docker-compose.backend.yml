@@ -13,12 +13,12 @@ services:
 
       # Shared VS Code server cache, same pattern as frontend
       - ${HOME}/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
-      - ${HOME}/.cache/codex:/root/.codex:Z
+      - ${HOME}/.cache/codex:/home/vscode/.codex:Z
 
     environment:
       # Matches ENV in the Dockerfile (backend image)
       - VSCODE_SERVER_DIR=/home/vscode/.vscode-server-shared
-      - CODEX_HOME=/root/.codex
+      - CODEX_HOME=/home/vscode/.codex
 
     # Expose API port: host:container
     ports:

@@ -20,7 +20,8 @@
 
   // Match backend image ENV + frontend convention
   "remoteEnv": {
-    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared"
+    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared",
+    "CODEX_HOME": "/home/vscode/.codex"
   },
 
   "customizations": {
