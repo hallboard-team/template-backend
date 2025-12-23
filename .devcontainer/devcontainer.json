@@ -1,5 +1,5 @@
 {
-  "name": "dev-${localWorkspaceFolderBasename}",
+  "name": "dev-${localWorkspaceFolderBasename}-back",
 
   // Use backend docker-compose file
   "dockerComposeFile": "./docker/docker-compose.backend.yml",
