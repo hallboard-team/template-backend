@@ -27,19 +27,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-dotnettools.csdevkit",
         "ms-dotnettools.csharp",
-        "adrianwilczynski.user-secrets",
-        "nurlybekovnt.csharpextensions",
-        "patcx.vscode-nuget-gallery",
-
-        "github.vscode-pull-request-github",
-
-        "openai.chatgpt",
-        "maptz.regionfolder",
-        "PKief.material-icon-theme",
-        "johnpapa.vscode-peacock",
-        "Gruntfuggly.todo-tree"
+        "Angular.ng-template",
+        "TerenceCarrera.gitea"
       ]
     }
   }

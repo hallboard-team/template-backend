@@ -1,0 +1,121 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/backend/api/api.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/backend/api/api.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary;ForceNoAlign"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/backend/api/api.csproj"
+      ],
+      "isBackground": true,
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "New C# Class",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/scripts/new-csharp-file.sh",
+      "args": [
+        "class",
+        "${input:fileName}",
+        "${input:targetDir}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "New C# Interface",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/scripts/new-csharp-file.sh",
+      "args": [
+        "interface",
+        "${input:fileName}",
+        "${input:targetDir}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "New C# Enum",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/scripts/new-csharp-file.sh",
+      "args": [
+        "enum",
+        "${input:fileName}",
+        "${input:targetDir}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "New C# Controller",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/scripts/new-csharp-file.sh",
+      "args": [
+        "controller",
+        "${input:fileName}",
+        "${input:targetDir}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "New C# Service",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/scripts/new-csharp-file.sh",
+      "args": [
+        "service",
+        "${input:fileName}",
+        "${input:targetDir}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "New C# DTO",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/scripts/new-csharp-file.sh",
+      "args": [
+        "dto",
+        "${input:fileName}",
+        "${input:targetDir}"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "fileName",
+      "type": "promptString",
+      "description": "Enter the base name"
+    },
+    {
+      "id": "targetDir",
+      "type": "promptString",
+      "description": "Enter target directory relative to workspace",
+      "default": "backend/api"
+    }
+  ]
+}
